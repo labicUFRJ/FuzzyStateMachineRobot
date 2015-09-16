@@ -1,0 +1,54 @@
+[System]
+Name='style'
+Type='mamdani'
+Version=2.0
+NumInputs=4
+NumOutputs=1
+NumRules=0
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='botNum'
+Range=[0 8]
+NumMFs=3
+MF1='Lo':'trapmf',[0 0 2 4]
+MF2='Me':'trimf',[2 4 6]
+MF3='Hi':'trapmf',[4 6 8 8]
+
+[Input2]
+Name='protection'
+Range=[0 500]
+NumMFs=3
+MF1='Lo':'trapmf',[0 0 125 250]
+MF2='Me':'trimf',[125 250 375]
+MF3='Hi':'trapmf',[250 375 500 500]
+
+[Input3]
+Name='enemyDist'
+Range=[0 80]
+NumMFs=3
+MF1='Lo':'trapmf',[0 0 20 40]
+MF2='Me':'trimf',[20 40 60]
+MF3='Hi':'trapmf',[40 60 80 80]
+
+[Input4]
+Name='courage'
+Range=[0 1]
+NumMFs=3
+MF1='Lo':'trapmf',[0 0 0.25 0.5]
+MF2='Me':'trimf',[0.25 0.5 0.75]
+MF3='Hi':'trapmf',[0.5 0.75 1 1]
+
+[Output1]
+Name='style'
+Range=[0 1]
+NumMFs=3
+MF1='De':'trapmf',[0 0 0.25 0.5]
+MF2='Ne':'trimf',[0.25 0.5 0.75]
+MF3='Ag':'trapmf',[0.5 0.75 1 1]
+
+[Rules]
